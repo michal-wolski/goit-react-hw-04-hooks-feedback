@@ -10,9 +10,6 @@ const App = () => {
     neutral: 0,
     bad: 0,
   });
-  // const [goodFeedback, setGoodFeedback] = useState(0);
-  // const [neutralFeedback, setNeutralFeedback] = useState(0);
-  // const [badFeedback, setBadFeedback] = useState(0);
 
   const options = Object.keys(feedback);
 
@@ -23,9 +20,7 @@ const App = () => {
     }));
 
   const countTotalFeedback = () => {
-    return Object.values(
-      feedback.good + feedback.neutral + feedback.bad
-    ).reduce((value, acc) => acc + value, 0);
+    return Object.values(feedback).reduce((value, acc) => acc + value, 0);
   };
 
   const countPositiveFeedbackPercentage = () => {
@@ -40,7 +35,7 @@ const App = () => {
       <Section title="Statistics">
         {countTotalFeedback() > 0 ? (
           <Statistics
-            good={feedback}
+            good={feedback.good}
             neutral={feedback.neutral}
             bad={feedback.bad}
             total={countTotalFeedback()}

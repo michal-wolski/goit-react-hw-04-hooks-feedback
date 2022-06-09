@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FeedbackButtonList, FeedbackButtonListItem } from './FeedbackStyles';
 
@@ -20,9 +20,9 @@ const Feedback = ({ options, handleLeaveFeedback }) => {
   );
 };
 
-// Feedback.propTypes = {
-//   handleLeaveFeedback: PropTypes.func.isRequired,
-//   options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad'])),
-// };
+Feedback.propTypes = {
+  handleLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad'])),
+};
 
 export default Feedback;
