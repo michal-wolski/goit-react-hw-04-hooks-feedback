@@ -10,7 +10,7 @@ export const FeedbackButtonList = styled.ul`
   }
 `;
 
-export const FeedbackButtonListItem = styled.li`
+export const FeedbackButtonListItem = styled.button`
   max-width: 150px;
   margin-bottom: 10px;
   text-decoration: none;

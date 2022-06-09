@@ -2,36 +2,40 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StatisticsList, StatisticsListItem } from './StatisticsStyles';
 
-class Statistics extends Component {
-  render() {
-    const { good, neutral, bad, total, positivePercentage } = this.props;
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+  return (
+    <>
+      <p>{good}</p>
+      <p>{neutral}</p>
+      <p>{bad}</p>
+      <p>{total}</p>
+      <p>{positivePercentage}</p>
+    </>
 
-    return (
-      <StatisticsList>
-        <StatisticsListItem>
-          <p>{good}</p>
-          <p>Good</p>
-        </StatisticsListItem>
-        <StatisticsListItem>
-          <p>{neutral}</p>
-          <p>Neutral</p>
-        </StatisticsListItem>
-        <StatisticsListItem>
-          <p>{bad}</p>
-          <p>Bad</p>
-        </StatisticsListItem>
-        <StatisticsListItem>
-          <p>{total}</p>
-          <p>Total</p>
-        </StatisticsListItem>
-        <StatisticsListItem>
-          <p>{positivePercentage}%</p>
-          <p>Positive feadback</p>
-        </StatisticsListItem>
-      </StatisticsList>
-    );
-  }
-}
+    // <StatisticsList>
+    //   <StatisticsListItem>
+    //     <p>{good}</p>
+    //     <p>Good</p>
+    //   </StatisticsListItem>
+    //   <StatisticsListItem>
+    //     <p>{neutral}</p>
+    //     <p>Neutral</p>
+    //   </StatisticsListItem>
+    //   <StatisticsListItem>
+    //     <p>{bad}</p>
+    //     <p>Bad</p>
+    //   </StatisticsListItem>
+    //   <StatisticsListItem>
+    //     <p>{total}</p>
+    //     <p>Total</p>
+    //   </StatisticsListItem>
+    //   <StatisticsListItem>
+    //     <p>{positivePercentage}%</p>
+    //     <p>Positive feadback</p>
+    //   </StatisticsListItem>
+    // </StatisticsList>
+  );
+};
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,
