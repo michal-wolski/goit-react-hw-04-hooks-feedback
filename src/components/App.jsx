@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import Statistics from './Statistics/Statistics';
 import Feedback from './Feedback/Feedback';
 import Section from './Section/Section';
@@ -16,17 +16,11 @@ const App = () => {
 
   const options = Object.keys(feedback);
 
-  const handleLeaveFeedback = option => {
-    setFeedback(prevState => ({ ...prevState, [option]: +1 }));
-    console.log(feedback);
-  };
-  // const handleLeaveFeedback = option => {
-  //   this.setState(prevState => {
-  //     return {
-  //       [option]: prevState[option] + 1,
-  //     };
-  //   });
-  // };
+  const handleLeaveFeedback = option =>
+    setFeedback(prevState => ({
+      ...prevState,
+      [option]: prevState[option] + 1,
+    }));
 
   const countTotalFeedback = () => {
     return Object.values(
@@ -46,7 +40,7 @@ const App = () => {
       <Section title="Statistics">
         {countTotalFeedback() > 0 ? (
           <Statistics
-            good={feedback.good}
+            good={feedback}
             neutral={feedback.neutral}
             bad={feedback.bad}
             total={countTotalFeedback()}
